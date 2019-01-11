@@ -6,3 +6,7 @@ CREATE KEYSPACE IF NOT EXISTS projet WITH REPLICATION = { 'class' : 'SimpleStrat
 Use projet;
 // Pour lister les keyspaces (DBs)
 describe keyspaces;
+// Créer une table
+Create Table Crime(ColonneA VARCHAR, ColonneB VARCHAR, PRIMARY KEY (ColonneA));
+// Importer un fichier dans une table
+COPY projet FROM 'TableauxTauxCriminalité.ods' WITH DELIMITER='|' AND HEADER=TRUE;
