@@ -1,12 +1,29 @@
+#Droits d'administrateur pour docker
+sudo -i
+
+#vérifier la présence de cloudera/quick start
+docker images
+
+#lancer l'image cloudera
+docker run --hostname=quickstart.cloudera --privileged=true -t -i -v /home/fitec/Documents/cloudera:/src --publish-all=true -p 8888 cloudera/quickstart /usr/bin/docker-quickstart
+#utiliser "docker exec -it fddf86cb9cad /bin/bash" pour ouvrir le terminal cloudera si besoin
+
+#Copie des données vers cloudera, a lancer en local depuis un nouveau terminal:
+docker cp /home/fitec/Documents/ProjectTeamRocket/DonneesBrutes/. fddf86cb9cad:/home/cloudera
+
+#lancer cloudera depuis le container
+./cloudera-manager --express
+
+http://172.17.0.2:7180/cmf/login
+
+allez sur l interface et demarer zookeper et HDFS
 
 
 
 
-#Copie des données vers cloudera, a lancer en local:
-cd /home/fitec/Bureau/Project tar -cv * | docker exec -i ce42056ca2ec  tar x -C /home/cloudera
 
-#On exec /bin/bash dans le container pour vérifier que les fichiers ont bien été copiés, à lancer en local:
-$docker exec -it ce42056ca2ec /bin/bash
+
+
 
 #Pour lancer cassandra:
 docker run -p 4040:4040 -p 8888:8888 -p 23:22 -ti --privileged yannael/kafka-sparkstreaming-cassandra
