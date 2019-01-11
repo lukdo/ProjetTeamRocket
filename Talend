@@ -1,0 +1,9 @@
+#Installation de Talend
+
+#utiliser java 8 et non java 10 qui est installé par défaut
+sudo apt-get install openjdk-8-jre
+sudo update-java-alternatives --set /usr/lib/jvm/java-1.8.0-openjdk-amd64
+
+#lancer le fichier zippé de talend. Si Talend téléchargé depuis internet cett étape est différente
+chmod +x TOS_BD-linux-gtk-x86.sh
+./TOS_BD-linux-gtk-x86.sh
