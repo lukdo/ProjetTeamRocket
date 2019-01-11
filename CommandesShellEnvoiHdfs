@@ -14,9 +14,9 @@ docker cp /home/fitec/Documents/ProjectTeamRocket/DonneesBrutes/. fddf86cb9cad:/
 #lancer cloudera depuis le container
 ./cloudera-manager --express
 
+#connexion à cloudera avec speudo: cloudera / mdp: cloudera
 http://172.17.0.2:7180/cmf/login
-
-allez sur l interface et demarer zookeper et HDFS
+#allez sur l interface et démarer zookeper et HDFS
 
 
 
