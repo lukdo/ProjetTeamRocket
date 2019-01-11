@@ -1,0 +1,13 @@
+
+
+
+
+#Copie des données vers cloudera, a lancer en local:
+cd /home/fitec/Bureau/Project tar -cv * | docker exec -i ce42056ca2ec  tar x -C /home/cloudera
+
+#On exec /bin/bash dans le container pour vérifier que les fichiers ont bien été copiés, à lancer en local:
+$docker exec -it ce42056ca2ec /bin/bash
+
+#Pour lancer cassandra:
+docker run -p 4040:4040 -p 8888:8888 -p 23:22 -ti --privileged yannael/kafka-sparkstreaming-cassandra
+
