@@ -1,0 +1,8 @@
+// Pour lancer cassandra 
+Cassndra -R
+cqlsh
+// Create a Database
+CREATE KEYSPACE IF NOT EXISTS projet WITH REPLICATION = { 'class' : 'SimpleStrategy', 'replication_factor': 1};
+Use projet;
+// Pour lister les keyspaces (DBs)
+describe keyspaces;
