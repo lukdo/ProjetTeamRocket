@@ -4,8 +4,8 @@ sudo -i
 #vérifier la présence de cloudera/quick start
 docker images
 
-#lancer l'image cloudera
-docker run --hostname=quickstart.cloudera --privileged=true -t -i -v /home/fitec/Documents/cloudera:/src --publish-all=true -p 8888 cloudera/quickstart /usr/bin/docker-quickstart
+#lancer l'image cloudera et vérifier la version "cloudera/quickstart:1"
+docker run --hostname=Lucas --privileged=true -t -i -v /home/fitec/Documents/cloudera:/home/cloudera/data --publish-all=true -p 8888 cloudera/quickstart:1 /usr/bin/docker-quickstart
 #utiliser "docker exec -it fddf86cb9cad /bin/bash" pour ouvrir le terminal cloudera si besoin
 
 #Copie des données vers cloudera, a lancer en local depuis un nouveau terminal:
@@ -18,13 +18,12 @@ docker cp /home/fitec/Documents/ProjectTeamRocket/DonneesBrutes/. fddf86cb9cad:/
 http://172.17.0.2:7180/cmf/login
 #allez sur l interface et démarer zookeper et HDFS
 
+#stocker les documents dans HDFS
+hdfs dfs -mkdir Projet
+hdfs dfs -put crime/TableauxTauxCriminalité.ods Projet/
+hdfs dfs -put economie/sl_cho_2018T3.xls Projet/
+#ajouter tous les autres fichiers nécessaires
 
-
-
-
-
-
-
-#Pour lancer cassandra:
-docker run -p 4040:4040 -p 8888:8888 -p 23:22 -ti --privileged yannael/kafka-sparkstreaming-cassandra
+#sauvegarder l'image docker en précisant la version, à partir du pc initial
+docker commit fddf86cb9cad  cloudera/quickstart:1
 
