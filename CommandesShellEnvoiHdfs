@@ -23,6 +23,8 @@ hdfs dfs -mkdir Projet
 hdfs dfs -put crime/TableauxTauxCriminalité.ods Projet/
 hdfs dfs -put economie/sl_cho_2018T3.xls Projet/
 #ajouter tous les autres fichiers nécessaires
+#Stocker un document dans HDFS
+ hdfs dfs -put Projet/* /user/cloudera/Projet
 
 #sauvegarder l'image docker en précisant la version, à partir du pc initial
 docker commit fddf86cb9cad  cloudera/quickstart:1
