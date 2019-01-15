@@ -5,7 +5,7 @@ sudo -i
 docker images
 
 #lancer l'image cloudera et vérifier la version "cloudera/quickstart:1"
-docker run --hostname=Lucas --privileged=true -t -i -v /home/fitec/Documents/cloudera:/home/cloudera/data --publish-all=true -p 8888 cloudera/quickstart:1 /usr/bin/docker-quickstart
+docker run --hostname=quickstart.cloudera --privileged=true -t -i -v /home/fitec/Documents/cloudera:/src --publish-all=true -p 8888 cloudera/quickstart /usr/bin/docker-quickstart
 #utiliser "docker exec -it fddf86cb9cad /bin/bash" pour ouvrir le terminal cloudera si besoin
 
 #Copie des données vers cloudera, a lancer en local depuis un nouveau terminal:
