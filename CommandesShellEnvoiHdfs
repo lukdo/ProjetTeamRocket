@@ -9,7 +9,7 @@ docker run --hostname=quickstart.cloudera --privileged=true -t -i -v /home/fitec
 #utiliser "docker exec -it fddf86cb9cad /bin/bash" pour ouvrir le terminal cloudera si besoin
 
 #Copie des données vers cloudera, a lancer en local depuis un nouveau terminal:
-docker cp /home/fitec/Documents/ProjectTeamRocket/DonneesBrutes/. fddf86cb9cad:/home/cloudera
+docker cp /home/fitec/IdeaProjects/TeamRocket/src/main/ressources/FichiersCarac/. fddf86cb9cad:/home/cloudera/Projet
 
 #lancer cloudera depuis le container
 ./cloudera-manager --express
